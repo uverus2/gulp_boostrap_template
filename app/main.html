@@ -1,47 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-     
-  
+
+
+
     <!--build:css css/main.min.css -->
 
-      <base href="/">
-     <link rel="stylesheet" type="text/css" href="css/main.css">
-            
-      <!-- endbuild -->
-</head>
-<body>
-    
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        1 of 2
-      </div>
-      <div class="col">
-        2 of 2
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        1 of 3
-      </div>
-      <div class="col">
-        2 of 3
-      </div>
-      <div class="col">
-        3 of 3
-      </div>
-    </div>
-  </div>
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
-    <!--build:js js/main.min.js -->
-   
+    <!-- endbuild -->
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                1 of 2
+            </div>
+            <div class="col">
+                2 of 2
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                1 of 3
+            </div>
+            <div class="col">
+                2 of 3
+            </div>
+            <div class="col">
+                <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+                Loading state
+              </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--build:js js/main.js -->
+    <script src="../node_modules/jquery/dist/jquery.js">
+    </script>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js">
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#myButton').on('click', function() {
+                var $btn = $(this).button('loading')
+                    // business logic...
+                $btn.button('reset')
+            })
+        });
+    </script>
+
+
+
+
+
+
+
+
+
     <!-- endbuild -->
 
 
+
+
 </body>
+
 </html>
