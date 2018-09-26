@@ -12,8 +12,6 @@ var runSequence = require('run-sequence');
 var babel = require('gulp-babel');
 
 
-
-
 // Development Tasks 
 // -----------------
 
@@ -46,6 +44,7 @@ gulp.task('sass', function() {
 gulp.task('watch', function() {
     gulp.watch('app/scss/**/*.scss', ['sass']);
     gulp.watch('app/*.html', browserSync.reload);
+    gulp.watch('node_modules/bootstrap/dist/css/bootstrap.min.css', browserSync.reload);
     gulp.watch('app/js/**/*.js', browserSync.reload);
     gulp.watch('node_modules/bootstrap/dist/js/**/*.js', browserSync.reload);
 });
